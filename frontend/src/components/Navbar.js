@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [activeItem, setActiveItem] = useState(null);
@@ -8,38 +9,46 @@ const Navbar = () => {
 
     return (
         <Menu>
-            <Menu.Item
-                name="home"
-                active={activeItem === "home"}
-                onClick={handleItemClick}
-            >
-                Home
-            </Menu.Item>
+            <Link to={`/`}>
+                <Menu.Item
+                    name="home"
+                    active={activeItem === "home"}
+                    onClick={handleItemClick}
+                >
+                    Home
+                </Menu.Item>
+            </Link>
 
-            <Menu.Item
-                name="gallery"
-                active={activeItem === "gallery"}
-                onClick={handleItemClick}
-            >
-                Gallery
-            </Menu.Item>
+            <Link to={`/gallery`}>
+                <Menu.Item
+                    name="gallery"
+                    active={activeItem === "gallery"}
+                    onClick={handleItemClick}
+                >
+                    Gallery
+                </Menu.Item>
+            </Link>
 
             <Menu.Menu position="right">
-                <Menu.Item
-                    name="cart"
-                    active={activeItem === "cart"}
-                    onClick={handleItemClick}
-                >
-                    Cart
-                </Menu.Item>
+                <Link to={`/cart`}>
+                    <Menu.Item
+                        name="cart"
+                        active={activeItem === "cart"}
+                        onClick={handleItemClick}
+                    >
+                        Cart
+                    </Menu.Item>
+                </Link>
 
-                <Menu.Item
-                    name="checkout"
-                    active={activeItem === "checkout"}
-                    onClick={handleItemClick}
-                >
-                    Checkout
-                </Menu.Item>
+                <Link to={`/checkout`}>
+                    <Menu.Item
+                        name="checkout"
+                        active={activeItem === "checkout"}
+                        onClick={handleItemClick}
+                    >
+                        Checkout
+                    </Menu.Item>
+                </Link>
             </Menu.Menu>
         </Menu>
     );
