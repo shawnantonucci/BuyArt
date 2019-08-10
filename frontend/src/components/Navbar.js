@@ -1,51 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const [activeItem, setActiveItem] = useState(null);
-
-    const handleItemClick = (e, { name }) => setActiveItem(name);
 
     return (
         <Menu>
             <Link to={`/`}>
-                <Menu.Item
-                    name="home"
-                    active={activeItem === "home"}
-                    onClick={handleItemClick}
-                >
+                <Menu.Item name="home">
                     Home
                 </Menu.Item>
             </Link>
 
             <Link to={`/gallery`}>
-                <Menu.Item
-                    name="gallery"
-                    active={activeItem === "gallery"}
-                    onClick={handleItemClick}
-                >
+                <Menu.Item name="gallery">
                     Gallery
                 </Menu.Item>
             </Link>
 
             <Menu.Menu position="right">
                 <Link to={`/cart`}>
-                    <Menu.Item
-                        name="cart"
-                        active={activeItem === "cart"}
-                        onClick={handleItemClick}
-                    >
+                    <Menu.Item name="cart">
                         Cart
                     </Menu.Item>
                 </Link>
 
                 <Link to={`/checkout`}>
-                    <Menu.Item
-                        name="checkout"
-                        active={activeItem === "checkout"}
-                        onClick={handleItemClick}
-                    >
+                    <Menu.Item name="checkout">
                         Checkout
                     </Menu.Item>
                 </Link>
